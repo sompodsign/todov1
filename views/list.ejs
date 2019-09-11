@@ -4,6 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Document</title>
+  <link rel="stylesheet" href="css/styles.css">
 </head>
 
 <body>
@@ -13,23 +14,31 @@
   <% } else { %>
   <h1 style="color: blue"> <%= day %> todo list. %></h1>
   <% } %> -->
-  <h1><%= day %></h1>
 
-  <ul>
+  <div class="box" id="heading">
+    <h1><%= day %></h1>
+</div>
+
+  <div class="box">
+  
     <% for (var i=0; i<newListItems.length; i++) { %>
-    <li>
-      <%= newListItems[i] %>
-    </li>
+      
+      <div class="item">
+          <input type="checkbox">
+      <p><%= newListItems[i] %> </p>
+      </div>
 
     <% } %>
 
-  </ul>
+    <form class="item" action="/" method="post">
+      <input type="text" name="newItem" placeholder="New Item" autocomplete = "off"></input>
+      <button type="submit" name="button">+</input>
+    </form>
+  
 
-  <form action="/" method="post">
-    <input type="text" name="newItem"></input>
-    <button type="submit" name="button">add</input>
-  </form>
+</div>
 
+  
 
 
 </body>
